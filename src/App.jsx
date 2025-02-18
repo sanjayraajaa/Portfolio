@@ -4,6 +4,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import './App.css';
+import nav_logo from './assets/logo.svg';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +16,14 @@ function App() {
   return (
     <div>
       <nav>
+        <div className="nav_logo">
+        <a href="#home" style={{ color: 'white', textDecoration: 'none' }} className='nav_logo_home'>
+          <img src={nav_logo} alt="" className="nav_logo_image" />
         <h2>
-          <a href="#home" style={{ color: 'white', textDecoration: 'none' }}>
             Home
-          </a>
         </h2>
+        </a>
+        </div>
         <div className={`burger ${isOpen ? 'active' : ''}`} onClick={handleBurgerClick}>
           <div></div>
           <div></div>
