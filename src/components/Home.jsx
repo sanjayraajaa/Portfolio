@@ -1,6 +1,8 @@
 import React from 'react';
 import '../style/Home.css';
 import intro_logo from '../assets/cool_emoji.svg'
+import profile from '../assets/profile.jpg'
+import SocialIcons from './SocialIcons';
 
 function Home() {
   return (
@@ -8,7 +10,7 @@ function Home() {
         <div className='intro_home'>
             <div className='intro_head'>
                 <h1 className='intro_name'>Sanjay Raja S</h1>
-                <img src={intro_logo} alt="" />
+                <img src={intro_logo} alt="Logo" />
             </div>
             <div className='designation font-semibold'><p>Frappe Developer</p></div>
             <div className='address'><p>
@@ -19,7 +21,8 @@ function Home() {
             </p></div>
         </div>
         <div className='intro_info'>
-
+            <img src={profile} alt="Profile Photo" />
+            <SocialIcons />
         </div>
     </div>
   );
