@@ -1,8 +1,3 @@
-.intro_name {
-    color: #77844c;
-    font-size: 40px;
-}
-
 .intro_head {
     display: flex;
     align-items: center;  /* Aligns the items vertically at the center */
@@ -18,14 +13,6 @@
     width: 30px;
 }
 
-.i_home {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-}
-
 .intro_home {
     width: 60%;
     display: flex;
@@ -35,6 +22,11 @@
 }
 .intro_info {
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .address {
@@ -45,14 +37,67 @@
     text-align: justify;
 }
 
-.intro_info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.intro_info img {
-    width: 45%;
+.profile_photo {
+    width: 200px;
     border-radius: 50%; /* Makes the image circular */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds a soft shadow */
+}
+
+.intro_head {
+    display: flex;
+    align-items: center; /* Keeps items aligned */
+    gap: 10px;
+    height: auto; /* Adjust height dynamically */
+}
+
+.i_home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; /* Ensure vertical alignment */
+    min-height: 400px; /* Prevents collapsing */
+    padding: 20px 0; /* Adds space to prevent content from jumping */
+}
+
+.intro_name {
+    color: #77844c;
+    font-size: 40px;
+    margin: 0; /* Prevents extra spacing */
+    padding: 5px 0;
+    line-height: 1.2; /* Helps maintain spacing */
+}
+
+
+/* Social Media Style */
+
+.soc_containder {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.soc_link img {
+    height: 30px;
+    width: 30px;
+}
+
+@media (max-width: 768px) {
+    .i_home {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro_name {
+        font-size: 30px; /* Reduce size on small screens */
+    }
+
+    .intro_home {
+        width: 90%;
+    }
+
+    .intro_info {
+        width: 90%;
+        margin-top: 30px;
+    }
 }
