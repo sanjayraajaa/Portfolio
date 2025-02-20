@@ -21,7 +21,7 @@ function Home() {
             </p></div>
         </div>
         <div className='intro_info'>
-            <img src={profile} alt="Profile Photo" />
+            <img src={profile} alt="Profile Photo" className='profile_photo' />
             <SocialIcons />
         </div>
     </div>
