@@ -4,9 +4,13 @@ import '../style/Project.css';
 function Projects() {
   const projects = [
     {
+      id: "qwe",
       name: 'Project One',
       description: 'Description of Project One',
-      link: 'http://example.com/project-one'
+      project_link: 'http://example.com/project-one',
+      source_link: 'http://example.com/project-one',
+      preview_img: null,
+      skill_set: null,
     },
     {
       name: 'Project Two',
@@ -18,7 +22,19 @@ function Projects() {
 
   return (
     <div>
-      <h1>Projects</h1>
+      <h1 className='pro_heading'>Projects</h1>
+      <div>
+      {
+        projects.map((project) => (
+          <div id={project.id}>
+            <img src={project.preview_img} alt="" />
+            <div>
+                <h1>{project.name}</h1>
+            </div>
+          </div>
+        ))
+      }
+      </div>
       <ul>
         {projects.map((project, index) => (
           <li key={index}>
