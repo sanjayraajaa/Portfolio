@@ -6,3 +6,68 @@
     color: #f4f2e6;
     padding: 3px 0 3px 0;
 }
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.project-preview {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-details {
+    width: 50%;
+    padding: 10px;
+}
+
+.project-details h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.project-langs {
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.lang-icon {
+    width: 20px;
+}
+
+.project-buttons button {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background-color: #db9a59;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.project-description {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.project-buttons button:hover {
+    background-color: #a56f3a;
+}

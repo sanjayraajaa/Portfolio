@@ -4,46 +4,43 @@ import '../style/Project.css';
 function Projects() {
   const projects = [
     {
-      id: "qwe",
-      name: 'Project One',
-      description: 'Description of Project One',
-      project_link: 'http://example.com/project-one',
-      source_link: 'http://example.com/project-one',
-      preview_img: null,
-      skill_set: null,
-    },
-    {
-      name: 'Project Two',
-      description: 'Description of Project Two',
-      link: 'http://example.com/project-two'
-    },
-    // Add more projects as needed
+      id: "dynamic-login-form",
+      pro_name: "Dynamic Themed Form",
+      preview_img: "src/assets/dynamic_login_form.jpg",
+      working_langs: ["html", "css", "javascript"],
+      description: "A dynamic sign-in form with theme toggling, password visibility toggle, responsive design, and elegant styling for a personalized user experience.",
+      project_link: "https://sanjayraajaa.github.io/Dynamic_Themed_Form/",
+      source_link: "https://github.com/sanjayraajaa/Dynamic_Themed_Form.git"
+    }
   ];
 
   return (
     <div>
       <h1 className='pro_heading'>Projects</h1>
-      <div>
-      {
-        projects.map((project) => (
-          <div id={project.id}>
-            <img src={project.preview_img} alt="" />
-            <div>
-                <h1>{project.name}</h1>
+      <div className='projects-container'>
+        {projects.map((project) => (
+          <div id={project.id} key={project.id} className='project-card'>
+            <img src={project.preview_img} alt={project.pro_name} className='project-preview' />
+            <div className='project-details'>
+              <h1>{project.pro_name}</h1>
+              <div className='project-langs'>
+                {project.working_langs.map((lang, index) => (
+                  <img key={index} src={`src/assets/${lang.toLowerCase()}.svg`} alt={lang} className='lang-icon' />
+                ))}
+              </div>
+              <div className='project-description'>{project.description}</div>
+              <div className='project-buttons'>
+                <a href={project.project_link} target='_blank' rel='noopener noreferrer'>
+                  <button>Open Project</button>
+                </a>
+                <a href={project.source_link} target='_blank' rel='noopener noreferrer'>
+                  <button>View Code</button>
+                </a>
+              </div>
             </div>
           </div>
-        ))
-      }
-      </div>
-      <ul>
-        {projects.map((project, index) => (
-          <li key={index}>
-            <h2>{project.name}</h2>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
-          </li>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
