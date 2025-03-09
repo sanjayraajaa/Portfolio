@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding-top: 20px;
 }
 
 .project-card {
@@ -34,6 +35,9 @@
 }
 
 .project-details {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
     width: 50%;
     padding: 10px;
 }
@@ -54,20 +58,117 @@
     width: 20px;
 }
 
-.project-buttons button {
-    padding: 8px 12px;
-    border: none;
-    cursor: pointer;
-    background-color: #db9a59;
-    color: white;
-    transition: background-color 0.3s;
-}
-
 .project-description {
     text-align: justify;
     font-size: 15px;
 }
 
-.project-buttons button:hover {
+.project-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Ensures space between buttons */
+    margin-top: 10px;
+    width: 100%; /* Makes sure buttons take full width */
+}
+
+.project-buttons a {
+    text-decoration: none;
+}
+
+.project-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content horizontally */
+    gap: 2px;  /* Adjust spacing between text and image */
+    height: 30px;
+    width: 100px;
+    padding: 5px 12px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #db9a59;
+    color: #db9a59;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.project-action-button:hover {
     background-color: #a56f3a;
+    color: white;
+    transform: scale(1.05);
+}
+
+.project-action-img {
+    width: 20px;  /* Set a fixed width */
+    height: 20px; /* Set a fixed height */
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        position: relative;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        padding: 0;
+        overflow: hidden; /* Prevents any content from overflowing */
+    }
+
+    .project-preview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: blur(8px); /* Applies the blur effect */
+        opacity: 0.5; /* Makes it slightly faded */
+        z-index: 0; /* Ensures it's behind the content */
+    }
+
+    .project-details {
+        position: relative;
+        z-index: 1; /* Places it above the background */
+        gap: 5px;
+        width: 95%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1); /* Adds a subtle transparent overlay */
+        backdrop-filter: blur(5px); /* Slight blur for a glassmorphism effect */
+        border-radius: 10px;
+        margin: 5px 0 5px 0;
+    }
+
+    .project-description {
+        line-height: 20px;
+      }
+    .project-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Ensures space between buttons */
+        margin-top: 10px;
+        width: 100%; /* Makes sure buttons take full width */
+    }
+
+    .project-action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centers content horizontally */
+        gap: 2px;  /* Adjust spacing between text and image */
+        height: 30px;
+        width: 100px;
+        padding: 5px 12px;
+        border: none;
+        cursor: pointer;
+        background: inherit;
+        border: 2px solid #db9a59;
+        color: #db9a59;
+        transition: background-color 0.3s, transform 0.2s;
+        font-family: 'Bricolage Grotesque', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        border-radius: 5px;
+    }
 }
