@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import Experience from './components/Experience'
 import './App.css';
 import nav_logo from './assets/logo.svg';
 
@@ -37,6 +38,9 @@ function App() {
       </nav>
       <section id="home">
         <Home />
+      </section>
+      <section>
+        <Experience />
       </section>
       <section id="projects">
         <Projects />
