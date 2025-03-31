@@ -27,14 +27,16 @@ const App: React.FC = () => {
         cr={1}
         glow={false}
         className={cn(
-          "absolute inset-0 w-full h-full opacity-100",
-          `[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]`
+          "absolute inset-0 w-full h-full opacity-50",
+          // Removed the radial gradient mask to make dots visible across the entire height
+          // Alternatively, adjust the mask to a larger radius if you want a subtle fade
+          // `[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]`
         )}
       />
-      <nav className="flex justify-between items-center p-4 bg-gray-800 shadow-lg">
+      <nav className="flex justify-between items-center p-4 bg-gray-800 shadow-lg relative z-10">
         <a href="#home" className="flex items-center space-x-2 text-white">
           <img src={navLogo} alt="Logo" className="h-10" />
-          <h2 className="text-xl font-bold">Home</h2>
+          <h2 className="text-xl font-bold">Sanjay Raja S</h2>
         </a>
         <div className="md:hidden" onClick={handleBurgerClick}>
           <div className={`w-6 h-0.5 bg-white mb-1 transition-transform ${isOpen ? "rotate-45 translate-y-1.5" : ""}`}></div>
@@ -42,24 +44,26 @@ const App: React.FC = () => {
           <div className={`w-6 h-0.5 bg-white transition-transform ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></div>
         </div>
         <ul className={`md:flex space-x-6 hidden font-medium`}>
+          <li><a href="#experience" className="hover:text-gray-300">Experience</a></li>
           <li><a href="#projects" className="hover:text-gray-300">Projects</a></li>
           <li><a href="#skills" className="hover:text-gray-300">Skills</a></li>
           <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-gray-800 p-4 space-y-4 font-medium">
+        <ul className="md:hidden flex flex-col items-center bg-gray-800 p-4 space-y-4 font-medium relative z-10">
+          <li><a href="#experience" onClick={handleBurgerClick}>Experience</a></li>
           <li><a href="#projects" onClick={handleBurgerClick}>Projects</a></li>
           <li><a href="#skills" onClick={handleBurgerClick}>Skills</a></li>
           <li><a href="#contact" onClick={handleBurgerClick}>Contact</a></li>
         </ul>
       )}
 
-      <section id="home" className="p-6"><Home /></section>
-      <section className="p-6"><Experience /></section>
-      <section id="projects" className="p-6"><Projects /></section>
-      <section id="skills" className="p-6"><Skills /></section>
-      <section id="contact" className="p-6"><Contact /></section>
+      <section id="home" className="p-6 relative z-10"><Home /></section>
+      <section id="experience" className="p-6 relative z-10"><Experience /></section>
+      <section id="projects" className="p-6 relative z-10"><Projects /></section>
+      <section id="skills" className="p-6 relative z-10"><Skills /></section>
+      <section id="contact" className="p-6 relative z-10"><Contact /></section>
     </div>
   );
 };
