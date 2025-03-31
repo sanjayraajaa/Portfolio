@@ -7,6 +7,8 @@ import pythonIcon from "../assets/skills/python.svg";
 import javascriptIcon from "../assets/skills/javascript.svg";
 import mariadbIcon from "../assets/skills/mariadb.svg";
 import reactIcon from "../assets/skills/react.svg";
+import htmlIcon from "../assets/skills/html.svg"
+import cssIcon from "../assets/skills/css.svg"
 
 const Skills: React.FC = () => {
   const skills = [
@@ -16,6 +18,8 @@ const Skills: React.FC = () => {
     { name: 'JavaScript', icon: javascriptIcon },
     { name: 'MariaDB', icon: mariadbIcon },
     { name: 'React', icon: reactIcon },
+    { name: 'HTML', icon: htmlIcon },
+    { name: 'CSS', icon: cssIcon },
   ];
 
   return (

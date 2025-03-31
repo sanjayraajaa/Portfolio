@@ -6,7 +6,7 @@ import profile from "../assets/personal/profile.jpg";
 
 const homeData = {
   name: "Sanjay Raja S",
-  title: ["Frappe Developer", "Open Source Contributor"],
+  title: ["Frappe Developer", "ERPNext Consultant","Aspiring Writer"],
   profileImage: profile,
   resumeLink: "/resume.pdf",
   description: [
