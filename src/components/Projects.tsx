@@ -34,14 +34,14 @@ export const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section className="py-16  text-white">
+    <section className="py-16 text-white">
       <div className="container mx-auto px-6 max-w-5xl">
         <h2 className="text-4xl font-bold text-center mb-10">Projects</h2>
         <div className="space-y-8 mx-2 sm:mx-4 md:mx-6">
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="rounded-lg shadow-md bg-gray-800 overflow-hidden hover:scale-102 transition-transform duration-300 w-full min-h-[350px]"
+              className="rounded-lg shadow-md bg-gray-800 overflow-hidden hover:scale-102 hover:bg-transparent transition-all duration-300 w-full min-h-[350px]"
             >
               <div className="flex flex-col md:flex-row items-center justify-between p-6 space-y-6 md:space-y-0 md:space-x-6">
                 {/* Left side: Image */}

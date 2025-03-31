@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 import navLogo from "./assets/logo.svg";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -59,11 +60,12 @@ const App: React.FC = () => {
         </ul>
       )}
 
-      <section id="home" className="p-6 relative z-10"><Home /></section>
-      <section id="experience" className="p-6 relative z-10"><Experience /></section>
-      <section id="projects" className="p-6 relative z-10"><Projects /></section>
-      <section id="skills" className="p-6 relative z-10"><Skills /></section>
-      <section id="contact" className="p-6 relative z-10"><Contact /></section>
+      <section id="home" className="relative z-10"><Home /></section>
+      <section id="experience" className="relative z-10"><Experience /></section>
+      <section id="projects" className="relative z-10"><Projects /></section>
+      <section id="skills" className="relative z-10"><Skills /></section>
+      <section id="contact" className="relative z-10"><Contact /></section>
+      <section id="contact" className="relative z-10"><Footer /></section>
     </div>
   );
 };
