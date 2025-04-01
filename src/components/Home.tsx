@@ -24,50 +24,56 @@ const homeData = {
 
 const Home: React.FC = () => {
   return (
-    <div className="relative flex flex-col lg:flex-row items-center justify-center h-auto py-12 text-center lg:text-left px-6 lg:px-12 mx-auto max-w-6xl">
-      {/* Left Section - Profile & Actions */}
-      <div className="flex flex-col items-center lg:items-start">
-        {/* Profile Image */}
-        <img 
-          src={homeData.profileImage}
-          alt={homeData.name}
-          className="rounded-full border-4 border-gray-700 shadow-lg w-44 h-44 lg:w-52 lg:h-52"
-        />
+<div className="relative flex flex-col lg:flex-row items-center justify-center h-auto py-12 text-center lg:text-left px-6 lg:px-12 mx-auto max-w-6xl">
+  {/* Left Section - Profile & Actions */}
+  <div className="flex flex-col items-center lg:items-start">
+    {/* Profile Image */}
+    <img 
+      src={homeData.profileImage}
+      alt={homeData.name}
+      className="rounded-full border-4 border-gray-700 shadow-lg w-44 h-44 lg:w-52 lg:h-52"
+    />
 
-        {/* Actions (Resume Button + Socials) */}
-        <div className="mt-4 flex flex-col items-center lg:items-start gap-4">
-          {/* Download Resume Button */}
+    {/* Actions (Resume Button + Socials) */}
+    <div className="mt-4 flex flex-col items-center lg:items-start gap-4">
+      {/* Download Resume Button */}
+      <a 
+        href={homeData.resumeLink} 
+        download 
+        className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500 text-center w-48"
+      >
+        Download Resume
+      </a>
+
+      {/* Social Media Icons */}
+      <div className="w-full flex justify-center space-x-4">
+        {homeData.socialLinks.map((social, index) => (
           <a 
-            href={homeData.resumeLink} 
-            download 
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500 text-center w-48"
-          >
-            Download Resume
+            key={index} 
+            href={social.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`text-gray-400 text-2xl transition-transform duration-300 transform hover:scale-110 ${social.color}`}
+          > 
+            {social.icon}
           </a>
-
-          {/* Social Media Icons */}
-          <div className="w-full flex justify-center space-x-4">
-            {homeData.socialLinks.map((social, index) => (
-              <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" className={`text-gray-400 text-2xl transition-colors duration-300 ${social.color}`}> 
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Right Section - Text Content */}
-      <div className="lg:ml-10 mt-6 lg:mt-0 max-w-2xl">
-        <h1 className="text-4xl font-bold">{homeData.name}</h1>
-        <h2 className="text-xl text-gray-400 mt-2 flex items-center justify-center lg:justify-start">
-          <FaUserCircle className="mr-2 text-2xl text-gray-400" />
-          <Typewriter options={{ strings: homeData.title, autoStart: true, loop: true }} />
-        </h2>
-        {homeData.description.map((para, index) => (
-          <p key={index} className="text-lg text-gray-300 mt-4">{para}</p>
         ))}
       </div>
     </div>
+  </div>
+
+  {/* Right Section - Text Content */}
+  <div className="lg:ml-10 mt-6 lg:mt-0 max-w-2xl">
+    <h1 className="text-4xl font-bold">{homeData.name}</h1>
+    <h2 className="text-xl text-gray-400 mt-2 flex items-center justify-center lg:justify-start">
+      <FaUserCircle className="mr-2 text-2xl text-gray-400" />
+      <Typewriter options={{ strings: homeData.title, autoStart: true, loop: true }} />
+    </h2>
+    {homeData.description.map((para, index) => (
+      <p key={index} className="text-lg text-gray-300 mt-4">{para}</p>
+    ))}
+  </div>
+</div>
   );
 };
 

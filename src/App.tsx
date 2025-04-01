@@ -34,7 +34,7 @@ const App: React.FC = () => {
           // `[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]`
         )}
       />
-      <nav className="flex justify-between items-center p-4 bg-gray-800 shadow-lg relative z-10">
+      <nav className="sticky top-0 flex justify-between items-center p-4 bg-gray-800 shadow-lg z-50">
         <a href="#home" className="flex items-center space-x-2 text-white">
           <img src={navLogo} alt="Logo" className="h-10" />
           <h2 className="text-xl font-bold">Sanjay Raja S</h2>
@@ -44,7 +44,7 @@ const App: React.FC = () => {
           <div className={`w-6 h-0.5 bg-white mb-1 ${isOpen ? "opacity-0" : ""}`}></div>
           <div className={`w-6 h-0.5 bg-white transition-transform ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></div>
         </div>
-        <ul className={`md:flex space-x-6 hidden font-medium`}>
+        <ul className="md:flex space-x-6 hidden font-medium">
           <li><a href="#experience" className="hover:text-gray-300">Experience</a></li>
           <li><a href="#projects" className="hover:text-gray-300">Projects</a></li>
           <li><a href="#skills" className="hover:text-gray-300">Skills</a></li>
@@ -60,12 +60,12 @@ const App: React.FC = () => {
         </ul>
       )}
 
-      <section id="home" className="relative z-10"><Home /></section>
-      <section id="experience" className="relative z-10"><Experience /></section>
-      <section id="projects" className="relative z-10"><Projects /></section>
-      <section id="skills" className="relative z-10"><Skills /></section>
-      <section id="contact" className="relative z-10"><Contact /></section>
-      <section id="contact" className="relative z-10"><Footer /></section>
+      <section id="home" className="relative z-10 mt-16 scroll-mt-16"><Home /></section>
+      <section id="experience" className="relative z-10 scroll-mt-16"><Experience /></section>
+      <section id="projects" className="relative z-10 scroll-mt-16"><Projects /></section>
+      <section id="skills" className="relative z-10 scroll-mt-16"><Skills /></section>
+      <section id="contact" className="relative z-10 scroll-mt-16"><Contact /></section>
+      <section id="contact" className="relative z-10 scroll-mt-16"><Footer /></section>
     </div>
   );
 };

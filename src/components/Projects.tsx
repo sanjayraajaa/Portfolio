@@ -27,7 +27,7 @@ export const projects: Project[] = [
     ],
     description:
       "A responsive and animated portfolio website showcasing skills in HTML, CSS, and JavaScript, optimized for all device types.",
-    projectLink: "https://sanjayraja.netlify.app/",
+    projectLink: "https://sanjayrajaarchive.netlify.app/",
     sourceLink: "https://github.com/sanjayraajaa/Personal_Portfolio",
   },
 ];
@@ -41,7 +41,7 @@ const Projects = () => {
           {projects.map((project) => (
             <Card
               key={project.id}
-              className="rounded-lg shadow-md bg-gray-800 overflow-hidden hover:scale-102 hover:bg-transparent transition-all duration-300 w-full min-h-[350px]"
+              className="rounded-lg shadow-md bg-[#1e2939]/30 backdrop-blur-lg overflow-hidden transition-all duration-300 w-full min-h-[350px] hover:scale-105 hover:bg-[#1e2939]/50 hover:backdrop-blur-xl border-0"
             >
               <div className="flex flex-col md:flex-row items-center justify-between p-6 space-y-6 md:space-y-0 md:space-x-6">
                 {/* Left side: Image */}
