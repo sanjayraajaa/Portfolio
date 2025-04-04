@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           Made with
           <FaHeart className="text-red-400 hover:text-red-500 transition-colors duration-300" />
           and
-          <FaCoffee className="text-amber-600 hover:text-amber-700 transition-colors duration-300" />
+          <FaCoffee className="text-[#C69C72] hover:text-[#7a5538] transition-colors duration-300" />
           by Sanjay Raja S
         </p>
         <p className="text-xs md:text-sm">

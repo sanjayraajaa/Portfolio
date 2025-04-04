@@ -8,6 +8,8 @@ import { DotPattern } from "@/components/magicui/dot-pattern";
 import { cn } from "@/lib/utils";
 import navLogo from "./assets/logo.svg";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -18,6 +20,19 @@ const App: React.FC = () => {
 
   return (
     <div className="relative bg-gray-900 text-white min-h-screen">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        style={{ zIndex: 99999, position: "fixed" }}
+      />
       <DotPattern
         width={25}
         height={25}
