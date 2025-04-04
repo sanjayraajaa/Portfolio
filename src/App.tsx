@@ -27,23 +27,24 @@ const App: React.FC = () => {
         cy={2}
         cr={1}
         glow={false}
-        className={cn(
-          "absolute inset-0 w-full h-full opacity-50",
-          // Removed the radial gradient mask to make dots visible across the entire height
-          // Alternatively, adjust the mask to a larger radius if you want a subtle fade
-          // `[mask-image:radial-gradient(1200px_circle_at_center,white,transparent)]`
-        )}
+        className={cn("absolute inset-0 w-full h-full opacity-50")}
       />
-      <nav className="sticky top-0 flex justify-between items-center p-4 bg-gray-800 shadow-lg z-50">
+
+      {/* Sticky Navbar */}
+      <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-gray-800 shadow-lg z-50">
         <a href="#home" className="flex items-center space-x-2 text-white">
           <img src={navLogo} alt="Logo" className="h-10" />
           <h2 className="text-xl font-bold">Sanjay Raja S</h2>
         </a>
-        <div className="md:hidden" onClick={handleBurgerClick}>
+
+        {/* Hamburger Menu */}
+        <div className="md:hidden cursor-pointer" onClick={handleBurgerClick}>
           <div className={`w-6 h-0.5 bg-white mb-1 transition-transform ${isOpen ? "rotate-45 translate-y-1.5" : ""}`}></div>
           <div className={`w-6 h-0.5 bg-white mb-1 ${isOpen ? "opacity-0" : ""}`}></div>
           <div className={`w-6 h-0.5 bg-white transition-transform ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></div>
         </div>
+
+        {/* Desktop Nav Links */}
         <ul className="md:flex space-x-6 hidden font-medium">
           <li><a href="#experience" className="hover:text-gray-300">Experience</a></li>
           <li><a href="#projects" className="hover:text-gray-300">Projects</a></li>
@@ -51,21 +52,27 @@ const App: React.FC = () => {
           <li><a href="#contact" className="hover:text-gray-300">Contact</a></li>
         </ul>
       </nav>
+
+      {/* Mobile Dropdown Menu (Below Navbar) */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-gray-800 p-4 space-y-4 font-medium relative z-10">
-          <li><a href="#experience" onClick={handleBurgerClick}>Experience</a></li>
-          <li><a href="#projects" onClick={handleBurgerClick}>Projects</a></li>
-          <li><a href="#skills" onClick={handleBurgerClick}>Skills</a></li>
-          <li><a href="#contact" onClick={handleBurgerClick}>Contact</a></li>
+        <ul className="md:hidden fixed top-[60px] left-0 w-full bg-gray-800 shadow-lg z-40 flex flex-col items-center p-4 space-y-4 font-medium">
+          <li><a href="#home" onClick={handleBurgerClick} className="hover:text-gray-300">Home</a></li>
+          <li><a href="#experience" onClick={handleBurgerClick} className="hover:text-gray-300">Experience</a></li>
+          <li><a href="#projects" onClick={handleBurgerClick} className="hover:text-gray-300">Projects</a></li>
+          <li><a href="#skills" onClick={handleBurgerClick} className="hover:text-gray-300">Skills</a></li>
+          <li><a href="#contact" onClick={handleBurgerClick} className="hover:text-gray-300">Contact</a></li>
         </ul>
       )}
 
-      <section id="home" className="relative z-10 mt-16 scroll-mt-16"><Home /></section>
-      <section id="experience" className="relative z-10 scroll-mt-16"><Experience /></section>
-      <section id="projects" className="relative z-10 scroll-mt-16"><Projects /></section>
-      <section id="skills" className="relative z-10 scroll-mt-16"><Skills /></section>
-      <section id="contact" className="relative z-10 scroll-mt-16"><Contact /></section>
-      <section id="contact" className="relative z-10 scroll-mt-16"><Footer /></section>
+      {/* Page Sections */}
+      <main className="pt-16">
+        <section id="home" className="relative z-10 scroll-mt-16"><Home /></section>
+        <section id="experience" className="relative z-10 scroll-mt-16"><Experience /></section>
+        <section id="projects" className="relative z-10 scroll-mt-16"><Projects /></section>
+        <section id="skills" className="relative z-10 scroll-mt-16"><Skills /></section>
+        <section id="contact" className="relative z-10 scroll-mt-16"><Contact /></section>
+        <Footer />
+      </main>
     </div>
   );
 };

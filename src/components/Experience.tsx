@@ -18,6 +18,7 @@ const experiences = [
       "Implementing backend solutions using Python and the Frappe Framework.",
       "Enhancing system performance and database optimization using MariaDB.",
       "Collaborating with clients to deliver tailored ERP solutions.",
+      "Utilizing Business Intelligence (BI) tools to develop data-driven dashboards and analytics",
     ],
     skills: [frappeIcon, erpnextIcon, pythonIcon, javascriptIcon, mariadbIcon],
     logo: syvasoftLogo,

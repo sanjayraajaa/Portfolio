@@ -18,7 +18,7 @@ const Skills: React.FC = () => {
     { name: 'JavaScript', icon: javascriptIcon },
     { name: 'MariaDB', icon: mariadbIcon },
     { name: 'React', icon: reactIcon },
-    { name: 'Tailwind CSS', icon: tailwindcssIcon },
+    { name: 'Tailwind', icon: tailwindcssIcon },
     { name: 'TypeScript', icon: typescriptIcon },
   ];
 

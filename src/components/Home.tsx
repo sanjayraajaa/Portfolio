@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       <a 
         href={homeData.resumeLink} 
         download 
-        className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-blue-500 text-center w-48"
+        className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-center w-48"
       >
         Download Resume
       </a>
