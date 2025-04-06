@@ -1,5 +1,3 @@
-import React from "react";
-import { Card } from "@/components/ui/card";
 import frappeIcon from "../assets/skills/frappe.svg";
 import erpnextIcon from "../assets/skills/erpnext.png";
 import pythonIcon from "../assets/skills/python.svg";
@@ -7,6 +5,7 @@ import javascriptIcon from "../assets/skills/javascript.svg";
 import mariadbIcon from "../assets/skills/mariadb.svg";
 import syvasoftLogo from "../assets/personal/Syvasoft.jpg";
 
+// Experiences array with skill names
 const experiences = [
   {
     role: "Frappe Developer",
@@ -20,58 +19,76 @@ const experiences = [
       "Collaborating with clients to deliver tailored ERP solutions.",
       "Utilizing Business Intelligence (BI) tools to develop data-driven dashboards and analytics",
     ],
-    skills: [frappeIcon, erpnextIcon, pythonIcon, javascriptIcon, mariadbIcon],
+    skills: [
+      { icon: frappeIcon, name: "Frappe" },
+      { icon: erpnextIcon, name: "ERPNext" },
+      { icon: pythonIcon, name: "Python" },
+      { icon: javascriptIcon, name: "JavaScript" },
+      { icon: mariadbIcon, name: "MariaDB" },
+    ],
     logo: syvasoftLogo,
   },
 ];
 
-const Experience: React.FC = () => {
+const Experience = () => {
   return (
-    <div className="max-w-5xl mx-auto p-8">
-      <h2 className="text-3xl font-bold text-white mb-8 text-center">Experience</h2>
+    <div className="py-12">
+      <div className="max-w-5xl mx-auto px-6 sm:px-10"> {/* Increased padding */}
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          Experience
+        </h2>
 
-      {experiences.map((exp, index) => (
-        <Card
-          key={index}
-          className="rounded-lg shadow-md bg-[#1e2939]/30 backdrop-blur-lg overflow-hidden transition-all duration-300 w-full max-w-5xl mx-auto min-h-[350px] hover:scale-105 hover:bg-[#1e2939]/50 hover:backdrop-blur-xl border-0"
-        >
-          <div className="flex flex-col md:flex-row items-start justify-start p-6 space-y-6 md:space-y-0 md:space-x-6">
-            {/* Logo Section */}
-            <div className="w-full md:w-2/5 h-48 sm:h-64 md:h-72 rounded-lg overflow-hidden">
-              <img
-                src={exp.logo}
-                alt={exp.company}
-                className="w-full h-full object-contain"
-              />
-            </div>
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            className="bg-[#1e2939]/30 backdrop-blur-lg p-6 rounded-lg w-full max-w-5xl mx-auto mb-8 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer"
+          >
+            <div className="flex flex-col md:flex-row items-start md:items-start justify-start gap-6">
+              
+              {/* Logo Section */}
+              <div className="w-full md:w-1/5 h-28 sm:h-36 md:h-40 rounded-lg overflow-hidden">
+                <img
+                  src={exp.logo}
+                  alt={exp.company}
+                  className="w-full h-full object-contain rounded-md transition-transform duration-300 hover:scale-105"
+                />
+              </div>
 
-            {/* Details Section */}
-            <div className="flex-grow md:pl-6 text-left">
-              <div className="md:flex md:justify-between items-start w-full">
+              {/* Content Section */}
+              <div className="flex-grow text-left space-y-3">
+              {/* Header: Role, Company, Duration */}
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between text-center md:text-left space-y-2 md:space-y-0">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-2">{exp.role}</h3>
+                  <h3 className="text-2xl font-semibold text-white">{exp.role}</h3>
                   <p className="text-gray-400 text-lg">{exp.company}</p>
                 </div>
-                <p className="text-gray-300 text-sm md:text-base mt-2 md:mt-0">
-                  {exp.duration}
-                </p>
+                <p className="text-gray-300 text-sm md:text-base">{exp.duration}</p>
               </div>
 
-              <div className="flex mt-4 space-x-4">
-                {exp.skills.map((icon, idx) => (
-                  <img key={idx} src={icon} alt="skill-icon" className="w-6 h-6" />
-                ))}
-              </div>
+                {/* Skills Icons */}
+                <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                  {exp.skills.map((skill, idx) => (
+                    <img
+                      key={idx}
+                      src={skill.icon}
+                      alt={skill.name}
+                      title={skill.name}
+                      className="w-6 h-6 transition-transform duration-200 hover:scale-125"
+                    />
+                  ))}
+                </div>
 
-              <ul className="text-gray-300 mt-4 text-sm list-disc list-inside">
-                {exp.description.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
+                {/* Description */}
+                <ul className="text-gray-300 text-sm list-disc list-inside space-y-2">
+                  {exp.description.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </Card>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
